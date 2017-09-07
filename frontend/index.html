@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>分享</title>
+    <meta name="viewport" content="width=828, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=828, user-scalable=no">
+
+    <script type="text/javascript">
+        var ua = navigator.userAgent || navigator.vendor || window.opera;
+
+        //全局对象
+        window.APPCONF = {
+            isIOS: /ipad|iphone|ipod/ig.test(ua) && !window.MSStream,
+            isWechat: /micromessenger/ig.test(ua),
+            isShoubai: /baiduboxapp/ig.test(ua),
+            // 分享 参数
+            url: location.href,
+            shareTitle: '喔~酷炫！百度翻译！',
+            shareDesc: '百度翻译新改版，快来体验~',
+            shareImgUrl: 'http://bduxc.bj.bcebos.com/test/share.png'
+        };
+    </script>
+</head>
+
+<body>
+    <!-- 分享 -->
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="//s.bdstatic.com/common/openjs/aio.js?_v=20170512"></script>
+    <!-- main -->
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/share.js"></script>
+    <script type="text/javascript">
+        // 初始化分享
+        if (window.APPCONF.isWechat) {
+            initWXShare();
+        } else if (window.APPCONF.isShoubai) {
+            initBoxShare();
+        }
+    </script>
+</body>
+
+</html>
