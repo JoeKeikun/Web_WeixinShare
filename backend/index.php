@@ -127,7 +127,7 @@
     /**
      * 读取配置
      */
-    $config = json_decode(get_php_file('.env'));
+    $config = json_decode(get_php_file('config.php', 15));
     if (!is_null($config)) {
         // 生成code
         $signPackage = getSignPackage($config->appid, $config->appsecret, $_GET['url']);

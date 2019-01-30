@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>分享</title>
+    <title>微信分享</title>
     <meta name="viewport" content="width=828, user-scalable=no">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="width=828, user-scalable=no">
@@ -12,29 +12,32 @@
 
         //全局对象
         window.APPCONF = {
-            isIOS: /ipad|iphone|ipod/ig.test(ua) && !window.MSStream,
-            isWechat: /micromessenger/ig.test(ua),
-            isShoubai: /baiduboxapp/ig.test(ua),
+            // isIOS: /ipad|iphone|ipod/ig.test(ua) && !window.MSStream, // 是否为IOS系统
+            isWechat: /micromessenger/ig.test(ua), // 是否为微信
+            isShoubai: /baiduboxapp/ig.test(ua), // 是否为手机百度
             // 分享 参数
             url: location.href,
-            shareTitle: '喔~酷炫！百度翻译！',
-            shareDesc: '百度翻译新改版，快来体验~',
-            shareImgUrl: 'http://bduxc.bj.bcebos.com/test/share.png'
+            shareTitle: '喔~酷炫！', // 分享的标题
+            shareDesc: '快来体验~', // 分享的介绍
+            shareImgUrl: 'http://bduxc.bj.bcebos.com/test/share.png' // 分享的icon
         };
     </script>
 </head>
 
-<body>
-    <!-- 分享 -->
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<body style="font-size: 1.5rem;">
+    <p style="text-align: center;">如遇阻碍，请先在<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">微信开发工具</a>内进行调试</p>
+    <p style="text-align: center;">若有无法解决的问题，可发邮件求助：<a href="mailto:247716557@qq.com">247716557@qq.com</a> <br> (晚上个人休息时间答复)</p>
+
+    <!-- sdk -->
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
     <script src="//s.bdstatic.com/common/openjs/aio.js?_v=20170512"></script>
     <!-- main -->
-    <script type="text/javascript" src="js/zepto.min.js"></script>
     <script type="text/javascript" src="js/share.js"></script>
     <script type="text/javascript">
         // 初始化分享
         if (window.APPCONF.isWechat) {
-            initWXShare();
+            // 入参数填写php对应的接口
+            initWXShare('/backend');
         } else if (window.APPCONF.isShoubai) {
             initBoxShare();
         }

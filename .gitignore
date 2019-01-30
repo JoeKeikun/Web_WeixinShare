@@ -1,6 +1,6 @@
-
 backend/.env
-
+backend/config.php
 backend/jsapi_ticket.php
-
 backend/access_token.php
+
+.DS_Store
