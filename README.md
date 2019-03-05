@@ -20,10 +20,10 @@
 ### 配置公众号
 1.运营人员登陆微信公众号后台。
 
-![](http://joekeikun.cc/wxshare_1.png)
+![](http://source.joekeikun.cc/git/wxshare_1.png)
 2.在**公众号设置**栏目中设置**JS接口安全域名**，以确保jsSDK正常运行。(网站的域名必须备案合法，同时需要开发人员将一个认证用的txt文件放置在服务器访问根目录文件夹"/"下)
 
-![](http://joekeikun.cc/wxshare_2.png)
+![](http://source.joekeikun.cc/git/wxshare_2.png)
 3.在**基本配置**栏目中设置**IP白名单**。（只有ip白名单中的服务器才可以访问微信accessToken获取接口，需要将开发测试的机器也配置进去，便于本地测试）
 
 4.将图3中的**开发者ID**和**开发者密码**提供给开发人员（记得保密，切勿泄漏）。
